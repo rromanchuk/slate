@@ -38,7 +38,7 @@ For method calls that require authentication the header should look like the fol
 
 `Authorization: Basic <base64 encoded string>`
 
-# Me
+# Users
 
 ## Get current user
 
@@ -69,6 +69,33 @@ This returns the user object the authenticated user.
 ### HTTP Request
 
 `GET https://api.trytipper.com/api/me/refresh`
+
+
+## Get specific user
+
+```shell
+curl 'https://api.trytipper.com/api/users/5d13d184-7946-45ab-8e58-cbad3ae26c65' -H 'Pragma: no-cache' -H 'Origin: https://www.trytipper.com' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'X-CSRF-Token: koP9psBYOKIQaiaPP+ns8B6ozSdeujQblJqse0PSKeVr/rLvfKHTfbTWA929bkISGKJhDVmZialCzJ054BDVKg==' -H 'Accept-Language: en,en-US;q=0.8' -H 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4' -H 'Accept: application/json, text/javascript, */*; q=0.01' -H 'Cache-Control: no-cache' -H 'Authorization: Basic MTQwNzg4Mjc6MTQwNzg4MjctTkFDeDEzeUZZbkl3Q09GT1pIbDlKbDZuVFBTaGJtdzdiUGdlWGV2OTk=' -H 'Connection: keep-alive' -H 'Referer: https://www.trytipper.com/tip/9760059bfc51c1203d855e82c5c9c6868ee7e65aa6a50d6bf2ce914aa7f11cf0' --compressed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "user":{  
+      "id":"5d13d184-7946-45ab-8e58-cbad3ae26c65",
+      "bitcoinAddress":"14jnsfMhGGch7i3CQ5jynuMeU2ZdBnqo2P",
+      "twitterUserId":"14764725",
+      "twitterUsername":"msiegs",
+      "profileImage":"http://pbs.twimg.com/profile_images/654353684491452416/QTiO4axY_normal.jpg",
+      "userId":"5d13d184-7946-45ab-8e58-cbad3ae26c65",
+      "bitcoinBalanceBtc":"0.01926"
+   }
+}
+```
+
+### HTTP Request
+
+`GET https://api.trytipper.com/api/users/<ID>`
 
 # Tips
 
