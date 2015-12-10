@@ -5,7 +5,6 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -16,11 +15,7 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Internal API documentation for integralvision.com
 
 
 # Users
@@ -58,6 +53,10 @@ curl -i \
 
 This endpoint returns the user object and token on successful authentication.
 
+<aside class="notice">
+Authentication not required
+</aside>
+
 ### HTTP Request
 
 `POST https://50.16.201.24/pmivapi/v1/authenticate`
@@ -76,15 +75,7 @@ username | n/a | Login username
 
 
 ```shell
-curl -i \
--X POST \
--H "Content-Type: application/json" \
--H "Accept: application/json" \
--H "Accept-Encoding: gzip;q=1.0,compress;q=0.5" \
--H "User-Agent: DailyDiary/com.integralvision.DailyDiary (12; OS Version 9.2 (Build 13C75))" \
--H "Accept-Language: en-US;q=1.0" \
--d "{\"password\":\"jlm@3176\",\"username\":\"jlm\"}" \
-"https://50.16.201.24/pmivapi/v1/authenticate"
+TBD
 
 ```
 
@@ -98,14 +89,44 @@ This endpoint returns the user object and token on successful authentication.
 
 ### HTTP Request
 
-`POST https://50.16.201.24/pmivapi/v1/authenticate`
+`POST https://50.16.201.24/pmivapi/v1/projectlist`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-password | n/a | Login password
-username | n/a | Login username
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | --------
+token | n/a | The authenticated user's token | true
+guid | n/a | The user's unique id | true
+
+
+# Diaries
+
+## Project diaries
+
+```shell
+TBD
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+TBD
+```
+
+### HTTP Request
+
+`POST https://50.16.201.24/pmivapi/v1/ddr/ddrlist`
+
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | --------
+projid | n/a | The project id | true
+token | n/a | The authenticated user's token | true
+guid | n/a | The user's unique id | true
+
 
 
 
